@@ -1,5 +1,5 @@
 def arithmetic_arranger(problems, con = False):
-  #This checks the number of input problems
+  #This checks the number of input problem
   if len(problems) > 5 :
     return('Error: Too many problems.')
 
@@ -44,10 +44,14 @@ def arithmetic_arranger(problems, con = False):
     long = max(len(foper[counter]), len(soper[counter]))
 
     #Creation of first line
-    fline = fline + foper[counter].rjust(long + 2) + '    '
+    for val in range((long + 2) - len(foper[counter])):
+      foper[counter] = ' ' + foper[counter]
+    fline = fline + foper[counter] + '    '
 
     #Creation of second line
-    sline = sline + opera[counter] + ' ' + soper[counter].rjust(long + 1) + '    '
+    for val in range((long + 1)- len(soper[counter])):
+      soper[counter] = ' ' + soper[counter]
+    sline = sline + opera[counter] + soper[counter] + '    '
 
     #Creation of third line
     for val in range(long + 2):
@@ -55,15 +59,17 @@ def arithmetic_arranger(problems, con = False):
     tline = tline + '    '
 
     #Creation of fourth line
-    aline = aline + res[counter].rjust(long + 2) + '    '
+    for val in range((long + 2) - len(res[counter])):
+      res[counter] = ' ' + res[counter]
+    aline = aline + res[counter] + '    '
 
     counter = counter + 1
 
   #Final output
-  fline = fline.strip()
-  sline = sline.strip()
-  tline = tline.strip()
-  aline = aline.strip()
+  fline = fline.rstrip()
+  sline = sline.rstrip()
+  tline = tline.rstrip()
+  aline = aline.rstrip()
   if con == False:
     arranged_problems = fline + '\n' + sline + '\n' + tline
   elif con == True:

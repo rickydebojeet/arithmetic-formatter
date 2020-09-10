@@ -1,8 +1,7 @@
 def arithmetic_arranger(problems, con = False):
   #This checks the number of input problems
   if len(problems) > 5 :
-    print('Error: Too many problems.')
-    exit()
+    return('Error: Too many problems.')
 
   #Initialization of lists, strings
   foper = list()
@@ -21,11 +20,9 @@ def arithmetic_arranger(problems, con = False):
     problem.rstrip()
     sproblem = problem.split(" ")
     if len(sproblem[0]) > 4 or len(sproblem[2]) > 4:
-      print('Error: Numbers cannot be more than four digits.')
-      exit()
+      return('Error: Numbers cannot be more than four digits.')
     if not (sproblem[1] == '+' or sproblem[1] == '-'):
-      print('Error: Operator must be \'+\' or \'-\'.')
-      exit() 
+      return('Error: Operator must be \'+\' or \'-\'.') 
     foper.append(sproblem[0])
     opera.append(sproblem[1])
     soper.append(sproblem[2])
@@ -37,8 +34,7 @@ def arithmetic_arranger(problems, con = False):
       a = int(foper[counter])
       b = int(soper[counter])
     except:
-      print('Error: Numbers must only contain digits.')
-      exit()
+      return('Error: Numbers must only contain digits.')
     if opera[counter] == '+':
       res.append(str(a + b))
     elif opera[counter] == '-':

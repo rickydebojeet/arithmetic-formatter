@@ -40,9 +40,9 @@ def arithmetic_arranger(problems, con = False):
       print('Error: Numbers must only contain digits.')
       exit()
     if opera[counter] == '+':
-      res[counter] = str(a + b)
+      res.append(str(a + b))
     elif opera[counter] == '-':
-      res[counter] = str(a - b)
+      res.append(str(a - b))
     
     #Finding the width of longest operand
     long = max(len(foper[counter]), len(soper[counter]))

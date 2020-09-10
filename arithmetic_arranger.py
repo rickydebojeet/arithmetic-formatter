@@ -55,7 +55,7 @@ def arithmetic_arranger(problems, con = False):
     tline = tline + '    '
 
     #Creation of fourth line
-    aline = res[counter].rjust(long + 2) + '    '
+    aline = aline + res[counter].rjust(long + 2) + '    '
 
     counter = counter + 1
 

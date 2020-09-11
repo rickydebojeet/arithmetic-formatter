@@ -2,8 +2,27 @@
 from arithmetic_arranger import arithmetic_arranger
 from unittest import main
 
+#Initialisation of variables
+arithmetic_exp = list()
 
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
+#Taking input
+while True:
+  exp = input('Please enter your arithmetic expression: ')
+  exp = str(exp)
+  arithmetic_exp.append(exp)
+  check = input('Do you want to continue? y or n : ')
+  if check == 'n':
+    break
+
+print('Aranging...')
+condition = input('Do you want the result to be shown? y or n : ')
+
+if condition == 'y':
+  condition = True
+else:
+  condition = False
+
+print(arithmetic_arranger([arithmetic_exp, condition]))
 
 
 
